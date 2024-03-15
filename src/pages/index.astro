@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
 import { InfiniteMovingCards } from "../components/slides";
+import { BackgroundBeams } from "../components/beams";
 
 const itemsData = [
   {
@@ -51,6 +51,7 @@ const itemsData = [
     <div
       class="min-h-screen w-full bg-[url('pl.svg')] bg-contain bg-bottom bg-no-repeat"
     >
+      <BackgroundBeams className="pointer-events-none" />
       <div class="extraMargin flex-col pt-10 text-5xl font-bold">
         <div>
           <span class="tracking-tighter"> &nbsp;</span>Backend Developer
