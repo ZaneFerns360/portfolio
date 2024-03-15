@@ -5,53 +5,93 @@ import { InfiniteMovingCards } from "../components/slides";
 
 const itemsData = [
   {
-    quote: "Life is a journey, not a destination.",
-    name: "John Doe",
-    title: "Explorer",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png",
+    name: "Typescript",
   },
-  // Add more items as needed
+  {
+    imageUrl: "https://cdn.worldvectorlogo.com/logos/next-js.svg",
+    name: "Next.js",
+  },
+  {
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/512px-Tailwind_CSS_Logo.svg.png?20230715030042",
+    name: "Tailwind",
+  },
+  {
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png",
+    name: "Python",
+  },
+  {
+    imageUrl:
+      "https://static-00.iconduck.com/assets.00/flask-icon-199x256-xjlsrr43.png",
+    name: "Flask",
+  },
+  {
+    imageUrl:
+      "https://i.pinimg.com/originals/39/b2/e4/39b2e4ad77c23a2c11e5950a7dfa2aec.png",
+    name: "Prisma",
+  },
+  {
+    imageUrl:
+      "https://static-00.iconduck.com/assets.00/django-icon-1606x2048-lwmw1z73.png",
+    name: "Django",
+  },
+  {
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1200px-Postgresql_elephant.svg.png",
+    name: "PostgreSQL",
+  },
 ];
 ---
 
 <Layout title="Zane Fernandes">
-  <main class="min-h-screen w-full bg-[url('pl.svg')] bg-right bg-no-repeat">
-    <div class="flex-col pt-10 text-5xl font-bold">
-      <div>
-        <span class="tracking-tighter"> &nbsp;</span>Backend Developer
+  <main>
+    <div
+      class="min-h-screen w-full bg-[url('pl.svg')] bg-contain bg-bottom bg-no-repeat"
+    >
+      <div class="extraMargin flex-col pt-10 text-5xl font-bold">
+        <div>
+          <span class="tracking-tighter"> &nbsp;</span>Backend Developer
+        </div>
+        <div class="pt-6 text-7xl font-bold">Zane Fernandes</div>
+        <div class="pt-8 text-4xl">
+          <p class="text-3xl font-normal">
+            I'm a backend developer, currently studying computer engineering
+            from Mumbai University.
+          </p>
+        </div>
       </div>
-      <div class="pt-6 text-7xl font-bold">Zane Fernandes</div>
-      <div class="pt-8 text-4xl">
-        <p class="text-3xl font-normal">
-          I'm a backend developer, currently studying computer engineering from
-          Mumbai University.
-        </p>
+      <div class="extraMargin flex flex-row space-x-6 pt-8">
+        <a href="#" class="glow-on-hover rounded-xl py-2 text-4xl font-bold">
+          Link 1
+        </a>
+        <a href="#" class="glow-on-hover rounded-xl py-2 text-4xl font-bold">
+          Link 1
+        </a>
       </div>
     </div>
-    <div class="flex flex-row space-x-6 pt-8">
-      <a
-        href="#"
-        class="rounded-xl border-4 border-amber-400 px-5 py-2 transition-transform duration-300 hover:scale-105 hover:border-b-8"
-      >
-        Link 1
-      </a>
-      <a
-        href="#"
-        class="rounded-xl border-4 border-amber-400 px-5 py-2 transition-transform duration-300 hover:scale-105 hover:border-b-8"
-      >
-        Link 2
-      </a>
-    </div><InfiniteMovingCards items={itemsData} speed="fast" client:load />
+    <div>
+      <InfiniteMovingCards
+        items={itemsData}
+        speed="fast"
+        client:load
+        className="pt-36"
+      />
+    </div>
   </main>
 </Layout>
 
 <style>
   main {
-    margin: 4rem;
-    padding: 1rem;
-    max-width: calc(100% - 2rem);
     color: white;
     font-size: 20px;
     line-height: 1.6;
+  }
+  .extraMargin {
+    margin: 4rem;
+    padding: 1rem;
   }
   .astro-a {
     position: absolute;
@@ -68,5 +108,84 @@ const itemsData = [
     line-height: 1;
     text-align: center;
     margin-bottom: 1em;
+  }
+
+  .glow-on-hover {
+    /* Existing styles */
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    border: 2px solid yellow; /* Static yellow border */
+    /* New styles for centering */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .glow-on-hover:before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      yellow,
+      orange,
+      #fffb00,
+      white
+    ); /* Updated gradient colors */
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+  }
+
+  .glow-on-hover:active {
+    color: #000;
+  }
+
+  .glow-on-hover:active:after {
+    background: transparent;
+  }
+
+  .glow-on-hover:hover:before {
+    opacity: 1;
+  }
+
+  .glow-on-hover:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+
+  @keyframes glowing {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
   }
 </style>
