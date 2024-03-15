@@ -46,42 +46,48 @@ const itemsData = [
 ---
 
 <Layout title="Zane Fernandes">
-  <main>
-    <div class="min-h-screen w-full bg-contain bg-bottom bg-no-repeat">
-      <BackgroundBeams className="pointer-events-none" client:load />
-      <div class="extraMargin flex-col pt-10 text-5xl font-bold">
-        <div>
-          <span class="tracking-tighter"> &nbsp;</span>Backend Developer
-        </div>
-        <div class="pt-6 text-7xl font-bold">Zane Fernandes</div>
-        <div class="pt-8 text-4xl">
-          <p class="text-3xl font-normal">
-            I am a highly motivated Web & Cloud Developer with a passion for
-            optimizing applications. My diverse skill set includes proficiency
-            in backend development, cloud computing, and a versatile programming
-            background. I excel in creating dynamic web interfaces and have
-            experience with mobile app development.
-          </p>
-        </div>
+  <main class="min-h-screen bg-contain bg-bottom bg-no-repeat">
+    <BackgroundBeams className="pointer-events-none" client:load />
+    <div
+      class="extraMargin flex-col pt-10 text-4xl font-bold md:text-5xl lg:text-6xl"
+    >
+      <div>Backend Developer</div>
+      <div class="pt-6 text-5xl font-bold md:text-7xl lg:text-8xl">
+        Zane Fernandes
       </div>
-      <div class="extraMargin flex flex-row space-x-6 pt-8">
-        <a href="#" class="glow-on-hover rounded-xl py-2 text-4xl font-bold">
-          Link 1
-        </a>
-        <a href="#" class="glow-on-hover rounded-xl py-2 text-4xl font-bold">
-          Link 1
-        </a>
+      <div class="pt-8 text-lg md:text-3xl">
+        <p class="text-base font-normal md:text-xl">
+          I am a highly motivated Web & Cloud Developer with a passion for
+          optimizing applications. My diverse skill set includes proficiency in
+          backend development, cloud computing, and a versatile programming
+          background. I excel in creating dynamic web interfaces and have
+          experience with mobile app development.
+        </p>
       </div>
     </div>
-    <div>
-      <InfiniteMovingCards
-        items={itemsData}
-        speed="fast"
-        client:load
-        className="pt-20"
-      />
+    <div class="extraMargin flex flex-row space-x-6 pt-8">
+      <a
+        href="#"
+        class="glow-on-hover rounded-xl py-2 text-xl font-bold md:text-4xl"
+      >
+        Link 1
+      </a>
+      <a
+        href="#"
+        class="glow-on-hover rounded-xl py-2 text-xl font-bold md:text-4xl"
+      >
+        Link 2
+      </a>
     </div>
   </main>
+  <div>
+    <InfiniteMovingCards
+      items={itemsData}
+      speed="fast"
+      client:load
+      className="pt-20"
+    />
+  </div>
 </Layout>
 
 <style>
