@@ -1,0 +1,72 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import { InfiniteMovingCards } from "../components/slides";
+
+const itemsData = [
+  {
+    quote: "Life is a journey, not a destination.",
+    name: "John Doe",
+    title: "Explorer",
+  },
+  // Add more items as needed
+];
+---
+
+<Layout title="Zane Fernandes">
+  <main class="min-h-screen w-full bg-[url('pl.svg')] bg-right bg-no-repeat">
+    <div class="flex-col pt-10 text-5xl font-bold">
+      <div>
+        <span class="tracking-tighter"> &nbsp;</span>Backend Developer
+      </div>
+      <div class="pt-6 text-7xl font-bold">Zane Fernandes</div>
+      <div class="pt-8 text-4xl">
+        <p class="text-3xl font-normal">
+          I'm a backend developer, currently studying computer engineering from
+          Mumbai University.
+        </p>
+      </div>
+    </div>
+    <div class="flex flex-row space-x-6 pt-8">
+      <a
+        href="#"
+        class="rounded-xl border-4 border-amber-400 px-5 py-2 transition-transform duration-300 hover:scale-105 hover:border-b-8"
+      >
+        Link 1
+      </a>
+      <a
+        href="#"
+        class="rounded-xl border-4 border-amber-400 px-5 py-2 transition-transform duration-300 hover:scale-105 hover:border-b-8"
+      >
+        Link 2
+      </a>
+    </div><InfiniteMovingCards items={itemsData} speed="fast" client:load />
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: 4rem;
+    padding: 1rem;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  .astro-a {
+    position: absolute;
+    top: -32px;
+    left: 50%;
+    transform: translatex(-50%);
+    width: 220px;
+    height: auto;
+    z-index: -1;
+  }
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+</style>
