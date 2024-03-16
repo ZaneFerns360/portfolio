@@ -2,7 +2,23 @@
 import Layout from "../layouts/Layout.astro";
 import { InfiniteMovingCards } from "../components/slides";
 import { BackgroundBeams } from "../components/beams";
-import next from "../img/next.png";
+import { TypewriterEffect } from "../components/typewriter.tsx";
+import AstroLogo from "~icons/logos/astro";
+import IconoirPage from "~icons/iconoir/page";
+import FluentEmojiPageFacingUp from "~icons/fluent-emoji/page-facing-up";
+import CarbonDocumentPdf from "~icons/carbon/document-pdf";
+import { File } from "lucide-react";
+const titles = [
+  {
+    text: "Zane",
+    className: "pt-6 text-5xl font-bold md:text-7xl lg:text-8xl text-white",
+  },
+  {
+    text: "Fernandes",
+    className: "pt-6 text-5xl font-bold md:text-7xl lg:text-8xl text-white",
+  },
+];
+
 const itemsData = [
   {
     imageUrl:
@@ -58,141 +74,200 @@ const itemsData = [
       <div class="pt-8 text-lg md:text-3xl">
         <p class="text-base font-normal md:text-xl">
           I am a highly motivated Web & Cloud Developer with a passion for
-          optimizing applications. My diverse skill set includes proficiency in
-          backend development, cloud computing, and a versatile programming
-          background. I excel in creating dynamic web interfaces and have
-          experience with mobile app development.
+          optimizing applications. <br /> My diverse skill set includes proficiency
+          in backend development, cloud computing, and a versatile programming background.
+          <br /> I excel in creating dynamic web interfaces and have experience with
+          mobile app development.
         </p>
       </div>
     </div>
     <div class="extraMargin flex flex-row space-x-6 pt-8">
+      <AstroLogo style="font-size:2rem;" />
+
       <a
         href="#"
-        class="glow-on-hover rounded-xl py-2 text-xl font-bold md:text-4xl"
+        class="glow-on-hover rounded-xl py-2 text-xl font-semibold md:text-4xl"
       >
-        Link 1
-      </a>
-      <a
-        href="#"
-        class="glow-on-hover rounded-xl py-2 text-xl font-bold md:text-4xl"
-      >
-        Link 2
+        Resume <IconoirPage class="pl-1 opacity-90" />
+
+        <a
+          href="#"
+          class="glow-on-hover rounded-xl py-2 text-xl font-semibold md:text-4xl"
+        >
+          Resume
+          <File color="white" size={42} />
+        </a>
+
+        <a
+          href="#"
+          class="glow-on-hover rounded-xl py-2 text-xl font-semibold md:text-4xl"
+        >
+          Resume
+          <CarbonDocumentPdf />
+        </a>
       </a>
     </div>
   </main>
-  <div>
+  <div class="flex flex-col items-center justify-center">
+    <span
+      class="animate-gradient bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 bg-clip-text text-5xl font-bold text-transparent"
+    >
+      Tech Stack
+    </span>
+
     <InfiniteMovingCards
       items={itemsData}
       speed="fast"
       client:load
-      className="pt-20"
+      className="pt-10"
     />
   </div>
+
+  <div
+    class="flex flex-col items-center justify-center space-y-10 pt-12 md:flex-row md:space-x-20 md:space-y-0"
+  >
+    <div
+      class="transform rounded-lg border-4 border-double border-blue-500 bg-gradient-to-t from-slate-900 to-slate-800 p-4 shadow-lg transition-transform hover:scale-105"
+    >
+      <h2 class="mb-2 text-2xl font-bold text-white md:text-3xl">Title</h2>
+      <p class="text-xl text-white md:text-2xl">Content goes here...</p>
+    </div>
+    <div
+      class="transform rounded-lg border-4 border-double border-blue-500 bg-gradient-to-t from-slate-900 to-slate-800 p-4 shadow-lg transition-transform hover:scale-105"
+    >
+      <h2 class="mb-2 text-2xl font-bold text-white md:text-3xl">Title</h2>
+      <p class="text-xl text-white md:text-2xl">Content goes here...</p>
+    </div>
+    <div
+      class="transform rounded-lg border-4 border-double border-blue-500 bg-gradient-to-t from-slate-900 to-slate-800 p-4 shadow-lg transition-transform hover:scale-105"
+    >
+      <h2 class="mb-2 text-2xl font-bold text-white md:text-3xl">Title</h2>
+      <p class="text-xl text-white md:text-2xl">Content goes here...</p>
+    </div>
+  </div>
+
+  <style>
+    main {
+      color: white;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+    .extraMargin {
+      margin: 4rem;
+      padding: 1rem;
+    }
+    .astro-a {
+      position: absolute;
+      top: -32px;
+      left: 50%;
+      transform: translatex(-50%);
+      width: 220px;
+      height: auto;
+      z-index: -1;
+    }
+    h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      line-height: 1;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+
+    .glow-on-hover {
+      /* Existing styles */
+      width: 220px;
+      height: 50px;
+      border: none;
+      outline: none;
+      color: #fff;
+      background: #111;
+      cursor: pointer;
+      position: relative;
+      z-index: 0;
+      border-radius: 10px;
+      border: 2px solid yellow; /* Static yellow border */
+      /* New styles for centering */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .glow-on-hover:before {
+      content: "";
+      background: linear-gradient(
+        45deg,
+        yellow,
+        orange,
+        #fffb00,
+        white
+      ); /* Updated gradient colors */
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      background-size: 400%;
+      z-index: -1;
+      filter: blur(5px);
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      animation: glowing 20s linear infinite;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      border-radius: 10px;
+    }
+
+    .glow-on-hover:active {
+      color: #000;
+    }
+
+    .glow-on-hover:active:after {
+      background: transparent;
+    }
+
+    .glow-on-hover:hover:before {
+      opacity: 1;
+    }
+
+    .glow-on-hover:after {
+      z-index: -1;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #111;
+      left: 0;
+      top: 0;
+      border-radius: 10px;
+    }
+
+    @keyframes glowing {
+      0% {
+        background-position: 0 0;
+      }
+      50% {
+        background-position: 400% 0;
+      }
+      100% {
+        background-position: 0 0;
+      }
+    }
+    .animate-gradient {
+      background-size: 300%;
+      -webkit-animation: animatedgradient 6s ease infinite alternate;
+      -moz-animation: animatedgradient 6s ease infinite alternate;
+      animation: animatedgradient 6s ease infinite alternate;
+    }
+
+    @keyframes animatedgradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  </style>
 </Layout>
-
-<style>
-  main {
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
-  }
-  .extraMargin {
-    margin: 4rem;
-    padding: 1rem;
-  }
-  .astro-a {
-    position: absolute;
-    top: -32px;
-    left: 50%;
-    transform: translatex(-50%);
-    width: 220px;
-    height: auto;
-    z-index: -1;
-  }
-  h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 1em;
-  }
-
-  .glow-on-hover {
-    /* Existing styles */
-    width: 220px;
-    height: 50px;
-    border: none;
-    outline: none;
-    color: #fff;
-    background: #111;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
-    border: 2px solid yellow; /* Static yellow border */
-    /* New styles for centering */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-
-  .glow-on-hover:before {
-    content: "";
-    background: linear-gradient(
-      45deg,
-      yellow,
-      orange,
-      #fffb00,
-      white
-    ); /* Updated gradient colors */
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing 20s linear infinite;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    border-radius: 10px;
-  }
-
-  .glow-on-hover:active {
-    color: #000;
-  }
-
-  .glow-on-hover:active:after {
-    background: transparent;
-  }
-
-  .glow-on-hover:hover:before {
-    opacity: 1;
-  }
-
-  .glow-on-hover:after {
-    z-index: -1;
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #111;
-    left: 0;
-    top: 0;
-    border-radius: 10px;
-  }
-
-  @keyframes glowing {
-    0% {
-      background-position: 0 0;
-    }
-    50% {
-      background-position: 400% 0;
-    }
-    100% {
-      background-position: 0 0;
-    }
-  }
-</style>
