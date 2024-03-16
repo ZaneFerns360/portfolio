@@ -1,4 +1,4 @@
 declare module "tailwindcss/lib/util/flattenColorPalette" {
-  const flattenColorPalette: any; // Adjust the type as needed
+  const flattenColorPalette;
   export default flattenColorPalette;
 }
