@@ -28,6 +28,13 @@ export const InfiniteMovingCards = ({
 
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
+      console.log("%cHi Joy", "color: red; font-size: 2em;"); // Adjust font-size as desired
+      console.log("%cHi Joy", "color: orange; font-size: 2em;");
+      console.log("%cHi Joy", "color: yellow; font-size: 2em;");
+      console.log("%cHi Joy", "color: green; font-size: 2em;");
+      console.log("%cHi Joy", "color: blue; font-size: 2em;");
+      console.log("%cHi Joy", "color: indigo; font-size: 2em;");
+      console.log("%cHi Joy", "color: violet; font-size: 2em;");
       const scrollerContent = Array.from(scrollerRef.current.children);
 
       scrollerContent.forEach((item) => {
