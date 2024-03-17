@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 import defaultTheme from "tailwindcss/defaultTheme";
 import colors from "tailwindcss/colors";
+
 import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -8,6 +9,10 @@ export default {
   theme: {
     // rest of the code
     extend: {
+      fontFamily: {
+        ls: "league-spartan, sans-serif",
+        roboto: "Roboto, sans-serif",
+      },
       animation: {
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
