@@ -22,6 +22,7 @@
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.13",
     "lucide-react": "^0.358.0",
+    "million": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwind-merge": "^2.2.1",
