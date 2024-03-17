@@ -4,9 +4,15 @@ import { InfiniteMovingCards } from "../components/slides";
 import { BackgroundBeams } from "../components/beams";
 import { TypewriterEffect } from "../components/typewriter.tsx";
 import IconoirPage from "~icons/iconoir/page";
-import { File } from "lucide-react";
 import IcOutlineEmail from "~icons/ic/outline-email";
 import DeviconPlainAstroWordmark from "~icons/devicon-plain/astro-wordmark";
+import LogosDocker from "~icons/logos/docker";
+import DeviconNginx from "~icons/devicon/nginx";
+import DeviconAzureWordmark from "~icons/devicon/azure-wordmark";
+import LogosVercel from "~icons/logos/vercel";
+import SkillIconsPrisma from "~icons/skill-icons/prisma";
+import DeviconPostgresqlWordmark from "~icons/devicon/postgresql-wordmark";
+import DeviconFirebaseWordmark from "~icons/devicon/firebase-wordmark";
 const titles = [
   {
     text: "Zane",
@@ -73,9 +79,8 @@ const itemsData = [
       <div class="pt-8 text-lg md:text-3xl">
         <p class="text-base font-normal md:text-xl">
           I am a highly motivated Web & Cloud Developer with a passion for
-          optimizing applications. <br /> My diverse skill set includes
-          proficiency in backend development, cloud computing, and a versatile programming
-          background.
+          optimizing applications. <br /> My diverse skill set includes proficiency
+          in backend development, cloud computing, and a versatile programming background.
           <br /> I excel in creating dynamic web interfaces and have experience with
           mobile app development.
         </p>
@@ -102,7 +107,7 @@ const itemsData = [
   </main>
   <div class="flex flex-col items-center justify-center">
     <span
-      class="animate-gradient bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 bg-clip-text text-5xl font-bold text-transparent"
+      class="animate-gradient bg-gradient-to-r from-blue-700 via-blue-500 to-green-400 bg-clip-text text-5xl font-bold text-transparent"
     >
       Tech Stack
     </span>
@@ -110,12 +115,12 @@ const itemsData = [
     <InfiniteMovingCards
       items={itemsData}
       speed="fast"
-      client:load
+      client:idle
       className="pt-10"
     />
     <div>
       <span
-        class="animate-gradient bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 bg-clip-text text-center text-5xl font-bold text-transparent"
+        class="animate-gradient bg-gradient-to-r from-blue-700 via-blue-500 to-green-400 bg-clip-text text-center text-5xl font-bold text-transparent"
         >Got you covered</span
       >
     </div>
@@ -124,22 +129,27 @@ const itemsData = [
     class="flex flex-col items-center justify-center space-y-10 pt-12 md:flex-row md:space-x-20 md:space-y-0"
   >
     <div
-      class="border-1 transform rounded-lg bg-gradient-to-t from-slate-900 to-slate-800 p-4 shadow-lg transition-transform hover:scale-105"
+      class="border-1 flex transform flex-col space-y-0 rounded-lg bg-gradient-to-t from-slate-900 to-slate-800 p-4 shadow-lg transition-transform hover:scale-105"
     >
-      <h2 class="mb-2 text-2xl font-bold text-white md:text-3xl"></h2>
-      <p class="text-xl text-white md:text-2xl">Content goes here...</p>
+      <h2 class="mb-2 text-2xl font-bold text-gray-300 md:text-3xl">DevOps</h2>
+      <DeviconAzureWordmark class="text-6xl" />
+      <DeviconNginx class="text-6xl" />
+      <LogosDocker class="text-6xl" />
     </div>
     <div
-      class="border-1 transform rounded-lg bg-gradient-to-t from-slate-900 to-slate-800 p-4 shadow-lg transition-transform hover:scale-105"
+      class="border-1 flex transform flex-col items-center space-y-0 rounded-lg bg-gradient-to-t from-slate-900 to-slate-800 p-4 shadow-lg transition-transform hover:scale-105"
     >
-      <h2 class="mb-2 text-2xl font-bold text-white md:text-3xl">Title</h2>
-      <p class="text-xl text-white md:text-2xl">Content goes here...</p>
+      <h2 class="mb-2 text-2xl font-bold text-gray-300 md:text-3xl">
+        Database
+      </h2>
+      <SkillIconsPrisma class="pl-0 text-5xl text-white" />
+      <DeviconPostgresqlWordmark class="pb-4 pt-4 text-7xl" />
+      <DeviconFirebaseWordmark class="text-6xl" />
     </div>
     <div
-      class="border-1 transform rounded-lg bg-gradient-to-t from-slate-900 to-slate-800 p-4 shadow-lg transition-transform hover:scale-105"
+      class="border-1 flex transform flex-col space-y-0 rounded-lg bg-gradient-to-t from-slate-900 to-slate-800 p-4 shadow-lg transition-transform hover:scale-105"
     >
-      <h2 class="mb-2 text-2xl font-bold text-white md:text-3xl">Title</h2>
-      <p class="text-xl text-white md:text-2xl">Content goes here...</p>
+      <h2 class="mb-2 text-2xl font-bold text-gray-300 md:text-3xl">Mobile</h2>
     </div>
   </div>
 
