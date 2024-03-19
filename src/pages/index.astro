@@ -3,7 +3,9 @@ export const prerender = true;
 import Layout from "../layouts/Layout.astro";
 import { InfiniteMovingCards } from "../components/slides";
 import { BackgroundBeams } from "../components/beams";
+import Contact from "../components/Contact.tsx";
 import { TypewriterEffect } from "../components/typewriter.tsx";
+import { BackgroundGradient } from "../components/graident.tsx";
 import IconoirPage from "~icons/iconoir/page";
 import IcOutlineEmail from "~icons/ic/outline-email";
 import DeviconPlainAstroWordmark from "~icons/devicon-plain/astro-wordmark";
@@ -17,6 +19,7 @@ import DeviconFirebaseWordmark from "~icons/devicon/firebase-wordmark";
 import LogosCreateReactApp from "~icons/logos/create-react-app";
 import DeviconAndroidstudio from "~icons/devicon/androidstudio";
 import VscodeIconsFileTypeExpo from "~icons/vscode-icons/file-type-expo";
+
 const titles = [
   {
     text: "Zane",
@@ -71,11 +74,9 @@ const itemsData = [
 ---
 
 <Layout title="Zane Fernandes">
-  <main class="min-h-screen bg-contain bg-bottom bg-no-repeat">
-    <BackgroundBeams
-      className="pointer-events-none max-md:hidden"
-      client:load
-    />
+  <BackgroundBeams className="pointer-events-none " client:load />
+
+  <main class="min-h-screen">
     <div
       class="mx-6 mt-8 flex-col text-4xl font-bold md:mx-16 md:mt-6 md:pt-10 md:text-5xl lg:text-6xl"
     >
@@ -98,16 +99,16 @@ const itemsData = [
 
       <a
         href="#"
-        class="glow-on-hover rounded-xl py-2 text-2xl font-semibold md:text-4xl"
+        class="glow-on-hover rounded-xl py-3 text-2xl font-semibold md:text-3xl"
       >
-        Resume <IconoirPage class="pl-1 opacity-90" />
+        Resume <IconoirPage class="ml-2 pt-0.5 text-3xl opacity-90" />
 
         <a
           href="#"
-          class="glow-on-hover rounded-xl py-2 text-2xl font-semibold md:text-4xl"
+          class="glow-on-hover rounded-xl py-3 text-2xl font-semibold md:text-3xl"
         >
           Contact
-          <IcOutlineEmail class="pl-1 pt-0.5 opacity-90" />
+          <IcOutlineEmail class="ml-2 pt-0.5 text-3xl opacity-90" />
         </a>
       </a>
     </div>
@@ -132,10 +133,11 @@ const itemsData = [
       >
     </div>
   </div>
+
   <div class="bg-lightblue relative h-8 flex-shrink-0 pt-2 font-ls">
     <div class="grid grid-cols-1 gap-8 px-8 py-12 md:grid-cols-3">
-      <div
-        class="card rounded-lg bg-gradient-to-t from-slate-900 to-slate-800 p-8 shadow-lg transition-transform hover:scale-105"
+      <BackgroundGradient
+        className=" rounded-[22px]    bg-gradient-to-t from-slate-900 to-slate-800 p-8 shadow-lg "
       >
         <h2 class="mb-2 text-2xl font-bold text-gray-300 md:text-3xl">
           DevOps
@@ -145,11 +147,11 @@ const itemsData = [
           <DeviconNginx class="text-7xl" />
           <LogosDocker class="text-7xl" />
         </div>
-      </div>
-      <div
-        class="card rounded-lg bg-gradient-to-t from-slate-900 to-slate-800 p-8 shadow-lg transition-transform hover:scale-105"
+      </BackgroundGradient>
+      <BackgroundGradient
+        className=" rounded-[22px]    bg-gradient-to-t from-slate-900 to-slate-800 p-8 shadow-lg "
       >
-        <h2 class="mb-4 text-2xl font-bold text-gray-300 md:text-3xl">
+        <h2 class="mb-2 text-2xl font-bold text-gray-300 md:text-3xl">
           Database
         </h2>
         <div class="flex justify-center space-x-4">
@@ -157,11 +159,11 @@ const itemsData = [
           <DeviconPostgresqlWordmark class="text-7xl" />
           <DeviconFirebaseWordmark class="text-6xl" />
         </div>
-      </div>
-      <div
-        class="card rounded-lg bg-gradient-to-t from-slate-900 to-slate-800 p-8 shadow-lg transition-transform hover:scale-105"
+      </BackgroundGradient>
+      <BackgroundGradient
+        className=" rounded-[22px]    bg-gradient-to-t from-slate-900 to-slate-800 p-8 shadow-lg "
       >
-        <h2 class="mb-4 text-2xl font-bold text-gray-300 md:text-3xl">
+        <h2 class="mb-2 text-2xl font-bold text-gray-300 md:text-3xl">
           Mobile
         </h2>
         <div class="flex justify-center space-x-4">
@@ -169,8 +171,10 @@ const itemsData = [
           <DeviconAndroidstudio class="py-4 text-7xl" />
           <VscodeIconsFileTypeExpo class="pt-0 text-7xl" />
         </div>
-      </div>
+      </BackgroundGradient>
     </div>
+    <Contact client:load />
+
     <div class="bg-lightblue relative h-8 flex-shrink-0 pt-32">
       <div
         class="absolute inset-y-0 left-0 right-0 flex items-center justify-center"
@@ -189,7 +193,6 @@ const itemsData = [
         <div class="h-px w-1/4 bg-blue-500 md:w-1/3"></div>
       </div>
     </div>
-
     <style>
       main {
         color: white;
