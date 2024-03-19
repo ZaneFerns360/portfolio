@@ -82,7 +82,7 @@ export const InfiniteMovingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        "scroller font-ls relative z-20 max-w-full overflow-hidden pb-2",
+        "scroller relative z-20 max-w-full overflow-hidden pb-2 font-ls",
         className,
       )}
     >
@@ -109,7 +109,7 @@ export const InfiniteMovingCards = ({
               </span>
               <img
                 src={item.imageUrl} // Display image to the right of text
-                alt={`${item.name} Image`}
+                alt={`${item.name} `}
                 className="h-16 w-16" // Set fixed size for the image
               />
             </blockquote>
