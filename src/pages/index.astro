@@ -19,6 +19,9 @@ import DeviconFirebaseWordmark from "~icons/devicon/firebase-wordmark";
 import LogosCreateReactApp from "~icons/logos/create-react-app";
 import DeviconAndroidstudio from "~icons/devicon/androidstudio";
 import VscodeIconsFileTypeExpo from "~icons/vscode-icons/file-type-expo";
+import Projectx from "../components/projects.tsx";
+import { GlobeDemo } from "../components/globex.tsx";
+import { Globe } from "@src/components/globe";
 
 const itemsData = [
   {
@@ -66,45 +69,50 @@ const itemsData = [
   <BackgroundBeams className="pointer-events-none " client:load />
 
   <main class="min-h-screen">
-    <div
-      class="mx-6 mt-8 flex-col text-4xl font-bold md:mx-16 md:mt-6 md:pt-10 md:text-5xl lg:text-6xl"
-    >
-      <div>Backend Developer</div>
-      <div class="font-l pt-6 text-6xl font-bold md:text-7xl lg:text-8xl">
-        Zane Fernandes
-      </div>
-      <div class="pt-8 text-lg md:text-3xl">
-        <p class="text-lg font-normal md:text-xl">
-          I am a Web & Cloud Developer with a passion for optimizing
-          applications. <br /> My diverse skill set includes proficiency in backend
-          development & cloud computing.
-          <br /> I excel in creating dynamic web interfaces and have experience with
-          mobile app development.
-        </p>
-      </div>
-    </div>
-    <div class="mx-6 flex flex-row space-x-6 pt-8 md:mx-16 md:mt-3">
-      <!--  <AstroLogo style="font-size:2rem;" /> -->
-
-      <a
-        href="#"
-        class="glow-on-hover rounded-xl py-3 text-2xl font-semibold md:text-3xl"
+    <div class="flex flex-col lg:flex-row">
+      <div
+        class="mx-6 mt-8 flex-col text-4xl font-bold md:mx-16 md:mt-6 md:pt-10 md:text-5xl lg:text-6xl"
       >
-        Resume <IconoirPage class="ml-2 pt-0.5 text-3xl opacity-90" />
+        <div>Backend Developer</div>
+        <div class="font-l pt-6 text-6xl font-bold md:text-7xl lg:text-8xl">
+          Zane Fernandes
+        </div>
+        <div class="pt-8 text-lg md:text-3xl">
+          <p class="text-lg font-normal md:text-xl">
+            I am a Web & Cloud Developer with a passion for optimizing
+            applications. <br /> My diverse skill set includes proficiency in backend
+            development & cloud computing.
+            <br /> I excel in creating dynamic web interfaces and have experience
+            with mobile app development.
+          </p>
+        </div>
+        <div class="flex flex-row space-x-6 pt-8 md:mt-3">
+          <!--  <AstroLogo style="font-size:2rem;" /> -->
 
-        <a
-          href="#"
-          class="glow-on-hover rounded-xl py-3 text-2xl font-semibold md:text-3xl"
-        >
-          Contact
-          <IcOutlineEmail class="ml-2 pt-0.5 text-3xl opacity-90" />
-        </a>
-      </a>
+          <a
+            href="#"
+            class="glow-on-hover rounded-xl py-3 text-2xl font-semibold md:text-3xl"
+          >
+            Resume <IconoirPage class="ml-2 pt-0.5 text-3xl opacity-90" />
+
+            <a
+              href="#"
+              class="glow-on-hover rounded-xl py-3 text-2xl font-semibold md:text-3xl"
+            >
+              Contact
+              <IcOutlineEmail class="ml-2 pt-0.5 text-3xl opacity-90" />
+            </a>
+          </a>
+        </div>
+      </div>
+      <div class="mx-0 my-0 w-full items-end justify-end lg:w-3/5">
+        <GlobeDemo client:only />
+      </div>
     </div>
   </main>
   <div class="flex flex-col items-center justify-center">
     <span
-      class="animate-gradient bg-gradient-to-r from-blue-700 via-blue-500 to-green-400 bg-clip-text pt-32 text-center font-roboto text-4xl font-bold text-transparent md:text-5xl"
+      class="animate-gradient bg-gradient-to-r from-blue-700 via-blue-500 to-green-400 bg-clip-text text-center font-roboto text-4xl font-bold text-transparent md:text-5xl lg:pt-32"
     >
       Tech Stack
     </span>
@@ -179,7 +187,7 @@ const itemsData = [
           >
             Made with <DeviconPlainAstroWordmark
               class="ml-1"
-              style="font-size: 3rem;"
+              style="font-size: 3rem"
             />
           </span>
         </a>
@@ -191,19 +199,6 @@ const itemsData = [
         color: white;
         font-size: 20px;
         line-height: 1.6;
-      }
-      .extraMargin {
-        margin: 4rem;
-        padding: 1rem;
-      }
-      .astro-a {
-        position: absolute;
-        top: -32px;
-        left: 50%;
-        transform: translatex(-50%);
-        width: 220px;
-        height: auto;
-        z-index: -1;
       }
       h1 {
         font-size: 4rem;

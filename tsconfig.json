@@ -4,6 +4,10 @@
     "types": ["unplugin-icons/types/astro"],
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "declaration": true
+    "declaration": true,
+    "paths": {
+      "@*": ["./*"],
+      "@/*": ["./*"]
+    }
   }
 }
